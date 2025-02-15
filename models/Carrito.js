@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db/connection');
+const Producto = require('./Producto'); 
 
 const Carrito = sequelize.define('Carrito', {
     id: {
@@ -11,7 +12,7 @@ const Carrito = sequelize.define('Carrito', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Producto', 
+            model: Producto, 
             key: 'id'
         }
     },
